@@ -25,18 +25,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Grammalecte Docker image
-        run: |
-          cd Grammalecte-fr-v2.3.0
-          docker build -t grammalecte:latest .
-          cd ..
-
       - name: Start Grammalecte service
         run: |
           docker run -d \
             --name grammalecte \
             -p 8080:8080 \
-            grammalecte:latest
+            newtondotcom/grammalecte:latest
 
       - name: Wait for Grammalecte to be ready
         run: |
