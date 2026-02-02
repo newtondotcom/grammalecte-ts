@@ -1,19 +1,44 @@
 {
-  "name": "grammalecte-ts",
-  "module": "index.ts",
+  "name": "grammalecte-web",
   "type": "module",
+  "version": "0.0.0",
+  "description": "A TypeScript wrapper library around the Python Grammalecte French grammar API",
+  "author": "robebs",
+  "license": "MIT",
+  "homepage": "https://github.com/robebs/grammalecte-web#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robebs/grammalecte-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robebs/grammalecte-web/issues"
+  },
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
-    "fmt:check": "oxfmt --check"
+    "fmt:check": "oxfmt --check",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@types/bun": "latest",
+    "@types/node": "^25.0.3",
+    "bumpp": "^10.3.2",
     "oxfmt": "^0.27.0",
-    "oxlint": "^1.42.0"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+    "oxlint": "^1.42.0",
+    "tsdown": "^0.20.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
   }
 }
