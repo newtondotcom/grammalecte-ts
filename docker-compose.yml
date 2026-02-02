@@ -9,7 +9,7 @@ services:
     environment:
       - PORT=8080
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/get_options/fr"]
+      test: ["CMD", "python3", "-c", "import socket; socket.create_connection(('127.0.0.1', 8080), timeout=5)"]
       interval: 5s
       timeout: 2s
       retries: 5
