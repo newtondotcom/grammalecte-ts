@@ -1,11 +1,11 @@
-# grammalecte-web
+# grammalecte-ts
 
 A TypeScript wrapper library around the Python Grammalecte French grammar API.
 
 ## Installation
 
 ```bash
-bun install grammalecte-web
+bun install grammalecte-ts
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ The wrapper exposes five main functions:
 Analyze text for grammar errors.
 
 ```typescript
-import { checkGrammar } from "grammalecte-web";
+import { checkGrammar } from "grammalecte-ts";
 
 const result = await checkGrammar("Ceci est un teste.");
 // {
@@ -40,7 +40,7 @@ const result = await checkGrammar("Ceci est un teste.");
 Get available grammar options for the current user session.
 
 ```typescript
-import { getOptions } from "grammalecte-web";
+import { getOptions } from "grammalecte-ts";
 
 const options = await getOptions();
 // { option1: true, option2: false, ... }
@@ -51,7 +51,7 @@ const options = await getOptions();
 Set grammar options for the current user session.
 
 ```typescript
-import { setOptions } from "grammalecte-web";
+import { setOptions } from "grammalecte-ts";
 
 const updated = await setOptions({ option1: true, option2: false });
 // { option1: true, option2: false, ... }
@@ -62,7 +62,7 @@ const updated = await setOptions({ option1: true, option2: false });
 Reset user options to defaults.
 
 ```typescript
-import { resetOptions } from "grammalecte-web";
+import { resetOptions } from "grammalecte-ts";
 
 await resetOptions();
 ```
@@ -72,7 +72,7 @@ await resetOptions();
 Get spelling suggestions for a word.
 
 ```typescript
-import { getSpellingSuggestions } from "grammalecte-web";
+import { getSpellingSuggestions } from "grammalecte-ts";
 
 const suggestions = await getSpellingSuggestions("teste");
 // ["test", "tester", "tests", ...]
@@ -163,7 +163,7 @@ import type {
   GrammarCheckResponse,
   GrammarError,
   GrammarOptions,
-} from "grammalecte-web";
+} from "grammalecte-ts";
 ```
 
 ## License

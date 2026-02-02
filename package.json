@@ -1,17 +1,17 @@
 {
-  "name": "grammalecte-web",
+  "name": "grammalecte-ts",
   "type": "module",
   "version": "0.0.0",
   "description": "A TypeScript wrapper library around the Python Grammalecte French grammar API",
   "author": "robebs",
   "license": "MIT",
-  "homepage": "https://github.com/robebs/grammalecte-web#readme",
+  "homepage": "https://github.com/robebs/grammalecte-ts#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/robebs/grammalecte-web.git"
+    "url": "git+https://github.com/robebs/grammalecte-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/robebs/grammalecte-web/issues"
+    "url": "https://github.com/robebs/grammalecte-ts/issues"
   },
   "exports": {
     ".": "./dist/index.mjs",

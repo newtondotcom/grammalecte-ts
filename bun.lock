@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "grammalecte-web",
+      "name": "grammalecte-ts",
       "devDependencies": {
         "@types/node": "^25.0.3",
         "bumpp": "^10.3.2",
