@@ -12,7 +12,7 @@ jobs:
 
     services:
       grammalecte:
-        image: grammalecte:latest
+        image: newtondotcom/grammalecte:latest
         options: >-
           --health-cmd "curl -f http://localhost:8080/get_options/fr || exit 1"
           --health-interval 10s
@@ -24,13 +24,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Start Grammalecte service
-        run: |
-          docker run -d \
-            --name grammalecte \
-            -p 8080:8080 \
-            newtondotcom/grammalecte:latest
 
       - name: Wait for Grammalecte to be ready
         run: |
