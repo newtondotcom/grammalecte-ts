@@ -1,4 +1,4 @@
-import { describe, it, expect} from "vitest";
+import { describe, it, expect } from "vitest";
 
 import {
   checkGrammar,
@@ -9,8 +9,7 @@ import {
 } from "../src/index";
 
 // Set up Grammalecte URL for tests
-process.env.GRAMMALECTE_URL =
-  process.env.GRAMMALECTE_URL || "http://localhost:8080";
+process.env.GRAMMALECTE_URL = process.env.GRAMMALECTE_URL || "http://localhost:8080";
 
 describe("Grammalecte Wrapper", () => {
   describe("checkGrammar", () => {

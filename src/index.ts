@@ -52,10 +52,7 @@ if (!GRAMMALECTE_URL) {
 /**
  * Analyze text for grammar errors
  */
-export async function checkGrammar(
-  text: string,
-  cookies?: string
-): Promise<GrammarCheckResult> {
+export async function checkGrammar(text: string, cookies?: string): Promise<GrammarCheckResult> {
   const headers: HeadersInit = {
     "Content-Type": "application/json",
   };
@@ -71,9 +68,7 @@ export async function checkGrammar(
   });
 
   if (!response.ok) {
-    throw new Error(
-      `Grammalecte error: ${response.status} ${response.statusText}`
-    );
+    throw new Error(`Grammalecte error: ${response.status} ${response.statusText}`);
   }
 
   const apiResponse = (await response.json()) as GrammarCheckResponse;
@@ -86,9 +81,7 @@ export async function checkGrammar(
 /**
  * Get available grammar options for the current user session
  */
-export async function getOptions(
-  cookies?: string
-): Promise<GrammarOptions> {
+export async function getOptions(cookies?: string): Promise<GrammarOptions> {
   const headers: HeadersInit = {};
 
   if (cookies) {
@@ -101,12 +94,10 @@ export async function getOptions(
   });
 
   if (!response.ok) {
-    throw new Error(
-      `Grammalecte error: ${response.status} ${response.statusText}`
-    );
+    throw new Error(`Grammalecte error: ${response.status} ${response.statusText}`);
   }
 
-  const data = await response.json() as OptionsResponse;
+  const data = (await response.json()) as OptionsResponse;
   return data.values || {};
 }
 
@@ -115,7 +106,7 @@ export async function getOptions(
  */
 export async function setOptions(
   options: GrammarOptions,
-  cookies?: string
+  cookies?: string,
 ): Promise<GrammarOptions> {
   const headers: HeadersInit = {
     "Content-Type": "application/json",
@@ -132,12 +123,10 @@ export async function setOptions(
   });
 
   if (!response.ok) {
-    throw new Error(
-      `Grammalecte error: ${response.status} ${response.statusText}`
-    );
+    throw new Error(`Grammalecte error: ${response.status} ${response.statusText}`);
   }
 
-  const data = await response.json() as OptionsResponse;
+  const data = (await response.json()) as OptionsResponse;
   return data.values || {};
 }
 
@@ -157,19 +146,14 @@ export async function resetOptions(cookies?: string): Promise<void> {
   });
 
   if (!response.ok) {
-    throw new Error(
-      `Grammalecte error: ${response.status} ${response.statusText}`
-    );
+    throw new Error(`Grammalecte error: ${response.status} ${response.statusText}`);
   }
 }
 
 /**
  * Get spelling suggestions for a word
  */
-export async function getSpellingSuggestions(
-  word: string,
-  cookies?: string
-): Promise<string[]> {
+export async function getSpellingSuggestions(word: string, cookies?: string): Promise<string[]> {
   const headers: HeadersInit = {};
 
   if (cookies) {
@@ -182,11 +166,9 @@ export async function getSpellingSuggestions(
   });
 
   if (!response.ok) {
-    throw new Error(
-      `Grammalecte error: ${response.status} ${response.statusText}`
-    );
+    throw new Error(`Grammalecte error: ${response.status} ${response.statusText}`);
   }
 
-  const data = await response.json() as SpellSuggestion;
+  const data = (await response.json()) as SpellSuggestion;
   return data.aSuggestions;
 }
